@@ -1,0 +1,209 @@
+@import 'variables';
+@import 'fonts';
+@import 'animations';
+
+* {
+	box-sizing: border-box;
+}
+
+::-moz-selection {
+	background-color: rgba(0, 0, 0, 0.39);
+}
+  
+::selection {
+	background-color: rgba(0, 0, 0, 0.39);
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Old versions of Firefox */
+		  -ms-user-select: none; /* Internet Explorer/Edge */
+			  user-select: none; /* Non-prefixed version, currently
+									supported by Chrome, Edge, Opera and Firefox */
+  }
+
+body {
+	font-size: 1em;
+	color: white;
+	background: #111;
+	font-family: "Inter", sans-serif;
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --header-padding: 0.6em;
+    }
+
+    header {
+        nav {
+            a {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-shrink: 0;
+
+	width: 100%;
+	height: 70px;
+	margin-top: 2vh;
+	padding: 0 calc(10% - var(--header-padding));
+	font-size: 16px;
+	font-weight: 400;
+
+	transition: opacity 0.3s $mainbezier;
+
+	// -webkit-backdrop-filter: blur(2px);
+	// backdrop-filter: blur(2px);
+
+	a {
+		font-size: 1em;
+		padding: 0.6em var(--header-padding);
+		opacity: 0.8;
+		transition: all 0.3s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.navbar__links {
+		a {
+			margin-left: 0.4em;
+			position: relative;
+			display: inline-block;
+			overflow: hidden;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: -1px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(255, 255, 255, 0.2);
+				z-index: -1;
+				border-radius: 80%;
+				transform: translate3d(0, -100%, 0);
+				transition: all 0.2s $mainbezier;
+			}
+
+			&:hover {
+				&:before {
+					transform: translate3d(0, 0, 0);
+					border-radius: 0%;
+				}
+			}
+		}
+	}
+}
+
+.btn {
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	padding: 1.6em 3em;
+	background: rgb(35, 56, 126);
+	color: white;
+	white-space: nowrap;
+	margin-top: 2em;
+	overflow: hidden;
+
+	&:hover {
+		span.visible {
+			transform: translateY(-260%);
+		}
+		span.hidden {
+			transform: translate3d(-50%, -50%, 0) scale(1.2) translateY(0);
+		}
+		&:after {
+			border-radius: 60%;
+			transform: translateY(-100%);
+		}
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transform: translateY(0);
+		background: rgba(0, 0, 0, 0.15);
+		border-radius: 0;
+		transition: all .45s $mainbezier;
+		z-index: 1;
+	}
+
+	span {
+		transition: transform .35s $mainbezier;
+
+		&.visible {
+			display: block;
+			position: relative;
+			z-index: 2;
+		}
+	
+		&.hidden {
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			z-index: 2;
+			transform: translate3d(-50%, -50%, 0) translateY(260%);
+		}
+	}
+}
+
+.underline {
+	width: 0%;
+	height: 2px;
+	background: white;
+	display: block;
+	transition: width 0.8s $easeout-bezier;
+	will-change: width;
+}
+
+.hide-container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	.h-div {
+		overflow: hidden;
+		line-height: 1.25;
+	}
+
+	.s-div {
+		font-size: 2em;
+		font-weight: 400;
+		transform: translate3d(0, 100%, 0);
+		transition: transform 0.8s $mainbezier;
+	}
+}
+
+.no-hide p {
+	line-height: 1.4;
+	font-size: 1.5em;
+}
+
+.flex-container {
+	display: flex;
+}
+
+.relative {
+	position: relative;
+}

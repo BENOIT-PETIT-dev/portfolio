@@ -1,0 +1,265 @@
+@import 'variables';
+@import 'fonts';
+@import 'animations';
+@import 'global';
+
+$purple: rgb(235, 193, 255);
+
+
+
+main {
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(20, 20, 20);
+    color: $purple;
+}
+
+
+.containers {
+    min-height: 50vh;
+    padding-top: 15vh;
+    padding-bottom: 10vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+    @media screen and (min-width: 1020px) {
+        min-width: 60vw;
+        min-height: 80vh;
+        padding-top: 20vh;
+        padding-bottom: 10vh;
+        padding-left: 25vw;
+        padding-right: 10vw;
+
+        &:last-child {
+            padding-right: 30vw;
+        }
+    }
+
+    @media screen and (max-width: 1020px) {
+        width: 100%;
+    }
+}
+
+
+
+
+.container0 {
+
+    h1 {
+        font-size: 7em;
+        font-family: 'Meadow';
+    }
+
+    @media screen and (max-width: 800px) {
+        h1 {
+            font-size: 3.5em;
+        }
+    }
+
+    .hide-container {
+        margin-top: 60px;
+    
+        .maxi-arrow {
+            position: absolute;
+            left: 400px;
+            top: 55%;
+            transform: translate3d(0, -50%, 0);
+            width: 30vw;
+            max-width: 300px;
+            height: auto;
+
+            @media screen and (max-width: 1020px) {
+                transform: translate3d(0, -50%, 0) rotate(90deg);
+                left: 150px;
+            }
+    
+            svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                fill: transparent;
+                stroke: $purple;
+                stroke-width: 5px;
+            }
+    
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background:rgb(20, 20, 20);
+                transform: scaleX(1);
+                transform-origin: right center;
+                transition: transform .6s $scale-bezier;
+                transition-delay: 1s;
+            }
+        }
+    
+        &.in-view {
+            @for $i from 1 through 10 {
+                .h-div:nth-child(#{$i}) .s-div {
+                    transition-delay: 0.1s * $i;
+                }
+            }
+        
+            .s-div {
+                transform: translate3d(0, 0, 0);
+            }
+    
+            .maxi-arrow:after {
+                transform: scaleX(0);
+            }
+        }
+    }
+}
+
+.container1, .container2 {
+    .presentation {
+        position: relative;
+        padding-top: 10vh;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: .6s opacity $mainbezier;
+        
+        h2.reveal-letters {
+            position: relative;
+            z-index: 1;
+            mix-blend-mode: difference;
+            font-family: "Meadow";
+            font-size: 5em;
+            display: flex;
+            column-gap: 5px;
+            overflow: hidden;
+
+            span {
+                transform: translate3d(0, 100%, 0);
+                transition: .3s transform $mainbezier;
+            }
+
+            @for $i from 1 through 10 {
+                span:nth-child(#{$i}) {
+                    transition-delay: 0.05s * $i;
+                }
+            }
+        }
+
+        .my-photo {
+            position: absolute;
+            top: 50px;
+            left: 40px;
+            width: 60vw;
+            max-width: 300px;
+            z-index: 0;
+        }
+
+        .my-email {
+            font-size: 2vw;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .flex-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+            column-gap: 30px;
+            row-gap: 40px;
+
+            .img-title {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            .p-container {
+                position: relative;
+                z-index: 2;
+                mix-blend-mode: difference;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: flex-start;
+                row-gap: 5px;
+                width: 100%;
+                max-width: 300px;
+                height: 100%;
+
+                h3 {
+                    font-size: 3em;
+                    margin-bottom: .8em;
+                }
+
+                .span-flexer {
+                    width: 30vw;
+                    max-width: 350px;
+                    min-width: 200px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 6px;
+
+                    span, a {
+                        font-size: 1.3em;
+                    }
+
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        &.in-view {
+            opacity: 1;
+
+            h2 span {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+    @media screen and (max-width: 1020px) {
+        padding-top: 0;
+        margin-top: 5vh;
+
+        .presentation {
+            padding-top: 0;
+
+            h2.reveal-letters {
+                font-size: 3em;
+            }
+
+            .flex-container {
+                flex-direction: column;
+
+                .p-container {
+                    margin-top: 150px;
+                    
+                    .span-flexer {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.container2 {
+    .presentation {
+        .flex-container {
+            .p-container {
+                margin-top: 30px;
+                height: auto;
+            }
+        }
+    }
+}

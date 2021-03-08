@@ -1,0 +1,155 @@
+@import 'variables';
+@import 'fonts';
+@import 'animations';
+@import 'global';
+
+
+
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: rgb(140, 63, 211);
+}
+
+.form-container {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-top: 20vh;
+    padding-bottom: 14vh;
+
+    @media screen and (max-width: 800px) {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    h1 {
+        font-size: 5em;
+        margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: 600px) {
+        h1 {
+            font-size: 3em;
+        }
+    }
+
+    form {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .field-container, .textarea-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        @media screen and (max-width: 480px) {
+            .field-container, .textarea-container {
+                max-width: 100%;
+            }
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+            border: 1px solid #552780;
+            -webkit-text-fill-color: white;
+            -webkit-box-shadow: 0 0 0px 1000px #6c31a3 inset;
+            box-shadow: 0 0 0px 1000px #6c31a3 inset;
+        }
+
+        .field-container.required, .textarea-container.required {
+            label::after {
+                content: "*";
+                position: absolute;
+                right: -10px;
+                top: -2px;
+            }
+        }
+
+        .textarea-container {
+            max-width: 100%;
+        }
+
+        input, textarea {
+            width: 100%;
+            outline: none;
+            border: none;
+            font-family: 'Inter';
+        }
+
+        label {
+            font-size: 0.8em;
+            margin-bottom: 9px;
+            position: relative;
+        }
+
+        input, textarea {
+            margin-bottom: 20px;
+            font-size: 1em;
+            padding: 9px;
+            color: white;
+            border: 1px solid transparent;
+            background:#6c31a3;
+            resize: vertical;
+
+            &:focus {
+                border-color: #552780;
+            }
+        }
+
+        .submit-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .btn {
+                position: relative;
+                z-index: 2;
+                background: rgb(230, 230, 230);
+                color: #111;
+                margin-top: 0;
+    
+                &:after {
+                    background: #fff;
+                    z-index: 0;
+                }
+            }
+
+            #response {
+                position: relative;
+                display: block;
+                font-size: 1.1em;
+                margin-left: 20px;
+                padding: .3em 1.1em;
+                color: black;
+                background: white;
+                border-radius: 100px;
+                pointer-events: none;
+
+                opacity: 0;
+                transform: translate3d(-30px, 0, 0);
+            }
+        }
+    }
+}

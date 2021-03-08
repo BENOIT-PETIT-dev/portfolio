@@ -1,0 +1,8 @@
+$mainbezier: cubic-bezier(0.4, 0, 0, 1);
+$transform-bezier: cubic-bezier(0.215, 0.61, 0.355, 1);
+$scale-bezier: cubic-bezier(.77,0,.18,1);
+$easeout-bezier: cubic-bezier(.43,.61,.39,.99);
+
+:root {
+    --header-padding: 1em;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="https://benoitpetit.fr/src/favicon.ico"/>
+	<title>Benoît PETIT - Front end developer</title>
+
+	<link rel="stylesheet" href="./styles/css/reset.css">
+	<link rel="stylesheet" href="./styles/css/locomotive.css">
+	<link rel="stylesheet" href="./styles/css/contact.css">
+</head>
+
+<body>
+	<header class="navbar">
+		<a href="../index.html">benoit petit</a>
+		<div class="navbar__links">
+			<!-- <a href="index.html?gowork">works</a> -->
+			<a href="about.html">about</a>
+			<a href="contact.html">contact</a>
+		</div>
+	</header>
+
+	<main data-scroll-container>
+		<section class="form-container">
+			<h1>Contact me</h1>
+			<form id="contact-form" action="mail.php" method="POST">
+				<div class="field-container required">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email">
+				</div>
+				<div class="field-container required">
+					<label for="fullname">Fullname</label>
+					<input type="text" name="fullname" id="fullname">
+				</div>
+				<div class="field-container">
+					<label for="phone">Phone</label>
+					<input type="phone" name="phone" id="phone">
+				</div>
+				<div class="textarea-container required">
+					<label for="message">Message</label>
+					<textarea rows="6" style="min-height: 150px" name="message" id="message"></textarea>
+				</div>
+				<div class="submit-container">
+					<button href="/spotify.html" class="btn --light">
+						<span class="visible">Submit</span>
+						<span class="hidden">Submit</span>
+					</button>
+					<span id="response"></span>
+				</div>
+			</form>
+		</section>
+	</main>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
+	<script src="./js/CustomEase.min.js"></script>
+	<script type="text/javascript" src="./js/locomotive-scroll.min.js"></script>
+	<script type="text/javascript" src="./js/locomotive.js" async defer></script>
+    <script type="text/javascript"  src="./js/main.js" async defer></script>
+	<script src="./js/mail.js" async defer></script>
+</body>
+
+</html>

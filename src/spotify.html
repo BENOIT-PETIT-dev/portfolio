@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="https://benoitpetit.fr/src/favicon.ico" />
+	<title>Benoît PETIT - Front end developer</title>
+
+	<link rel="stylesheet" href="https://pagecdn.io/lib/tailwindcss/1.6.2/utilities.min.css">
+	<link rel="stylesheet" href="./styles/css/reset.css">
+	<link rel="stylesheet" href="./styles/css/locomotive.css">
+	<link rel="stylesheet" href="./styles/css/study.css">
+</head>
+
+<body>
+	<header class="navbar">
+		<a href="../index.html">benoit petit</a>
+		<div class="navbar__links">
+			<!-- <a href="index.html?gowork">works</a> -->
+			<a href="about.html">about</a>
+			<a href="contact.html">contact</a>
+		</div>
+	</header>
+
+	<main data-scroll-container>
+		<section id="hero-study" data-scroll-section>
+			<div class="hero-study__title" data-scroll data-scroll-speed="-2">
+				<h1>Spotify replica</h1>
+				<h2>just to train</h2>
+			</div>
+		</section>
+		<section id="study-section" data-scroll-section>
+			<div class="study-section__view-case">
+				<a href="https://benoitpetit.fr/test_creations/spotify_replica/" target="_blank"
+					class="button-container">
+					<img src="./ressources/icons/arrow.png" alt="Flèche">
+					<span>view</span>
+					<span>case</span>
+				</a>
+				<div class="ovale-container">
+					<div class="ovale first"></div>
+					<div class="ovale second"></div>
+				</div>
+			</div>
+
+			<article class="study-section__article">
+				<div class="img-container --full --arche --noise --reveal" data-scroll data-scroll-offset="20%"
+					data-scroll-id="case-study-img"><img src="./ressources/images/spotify.png" alt="Spotify replica">
+				</div>
+
+				<div class="study-section__article__explications">
+					<div class="underline-explanation" data-scroll data-scroll-offset="0, -1000%">
+						<span class="underline mt-12 mb-12"></span>
+						<div class="hide-container">
+							<div class="h-div">
+								<p class="s-div">Made using HTML & SCSS,</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">this little project allowed</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">me to train myself for frontend</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">applications with interresting</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">layouts such as Spotify.</p>
+							</div>
+						</div>
+						<div class="no-hide">
+							<p>
+								Made using HTML & SCSS, this little project allowed me to train myself for frontend
+								applications with interresting layouts such as Spotify.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex flex-col justify-start row-gap-4 col-gap-8 mt-12 sm:flex-row">
+						<div class="img-container --short sm:max-w-md"><img src="./ressources/images/spotify_main.png"
+								alt="Spotify replica card"></div>
+						<p class="simple-p sm:max-w-xs flex flex-col">This layout includes the use of grid to place
+							blocks such as navigation, playbar, and user flow of albums and playlists.<span
+								class="mt-2 mb-2"></span>Grid feature is used to design responsive design without even
+							touching to media queries.</p>
+					</div>
+
+					<div class="underline-explanation" data-scroll data-scroll-offset="0, -1000%">
+						<span class="underline mt-12 mb-12"></span>
+						<div class="hide-container">
+							<div class="h-div">
+								<p class="s-div">This training project also was</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">a great way to explore the navigator</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">audio API using a lot of events to</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">catch audio attributes.</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">As well as audio manipulation,</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">I used mouse events to link the</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">audio playbar and music volume</p>
+							</div>
+							<div class="h-div">
+								<p class="s-div">to the width of the element.</p>
+							</div>
+						</div>
+						<div class="no-hide">
+							<p>
+								This training project also was a great way to explore the navigator audio API using a
+								lot of events to catch audio attributes.<br>
+								As well as audio manipulation, I used mouse events to link the audio playbar and music
+								volume to the width of the element.
+							</p>
+						</div>
+						<div class="img-container mt-12 sm:max-w-md --reveal --min"><img
+								src="./ressources/images/spotify_audio.png" alt="Spotify replica card"></div>
+					</div>
+
+					<div class="footer-container">
+						<a href="../index.html" class="back-to-home" data-scroll>
+							<img class="arrow" src="./ressources/icons/arrow.svg" alt="Flèche">
+							<svg viewBox="0 0 120 120">
+								<circle cx="60" cy="60" r="58" />
+							</svg>
+						</a>
+						<a href="./contact.html" class="btn --light">
+							<span class="visible">Contact</span>
+							<span class="hidden">Contact</span>
+						</a>
+					</div>
+				</div>
+			</article>
+
+			<div class="study-section__background">
+				<div class="arche" data-scroll data-scroll-offset="20%" data-scroll-id="case-study-bg"></div>
+				<div class="solid"></div>
+			</div>
+		</section>
+	</main>
+
+	<script type="text/javascript" src="./js/locomotive-scroll.min.js"></script>
+	<script type="text/javascript" src="./js/locomotive.js" async defer></script>
+	<script type="text/javascript" src="./js/main.js" async defer></script>
+</body>
+
+</html>
